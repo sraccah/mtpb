@@ -13,3 +13,6 @@ Setup:
 * cd mtpb/ => get in the project folder
 * rails server => launch the dev server
 * localhost:3000 => homepage
+
+* Database setup
+* in mtpb folder => rails db:create => rails db:migrate

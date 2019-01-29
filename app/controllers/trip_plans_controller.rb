@@ -30,7 +30,7 @@ class TripPlansController < ApplicationController
 
     respond_to do |format|
       if @trip_plan.save
-        flash['success'] = 'Trip was successfully created.'
+        flash['success'] = 'Trip plan was successfully created.'
         format.html { redirect_to @trip_plan, flash: @flash }
         format.json { render :show, status: :created, location: @trip_plan }
       else
@@ -45,7 +45,7 @@ class TripPlansController < ApplicationController
   def update
     respond_to do |format|
       if @trip_plan.update(trip_plan_params)
-        flash['alert'] = 'Trip was successfully updated.'
+        flash['alert'] = 'Trip plan was successfully updated.'
         format.html { redirect_to @trip_plan, flash: @flash }
         format.json { render :show, status: :ok, location: @trip_plan }
       else
@@ -60,7 +60,7 @@ class TripPlansController < ApplicationController
   def destroy
     @trip_plan.destroy
     respond_to do |format|
-      flash['error'] = 'Trip was successfully deleted.'
+      flash['error'] = 'Trip plan was successfully deleted.'
       format.html { redirect_to trip_plans_url, flash: @flash }
       format.json { head :no_content }
     end
