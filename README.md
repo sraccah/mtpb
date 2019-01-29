@@ -1,9 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here you can see the procedure to set up the web app locally
 
-Things you may want to cover:
+Setup:
 
 * Ruby version 2.0.7
 
