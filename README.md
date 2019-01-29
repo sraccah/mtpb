@@ -5,6 +5,7 @@ Here you can see the procedure to set up the web app locally
 Setup:
 
 * Ruby version 2.0.7
+* Rails version 5.2.2
 
 * Database used SQLite
 
