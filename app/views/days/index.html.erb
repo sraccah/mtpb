@@ -11,8 +11,6 @@
       <tr>
         <% if @order == "DESC" %>
           <th><%= link_to 'Index', :status => 'ASC'  %></th>
-        <% elsif @order == "ASC" %>
-          <th><%= link_to 'Index', :status => 'DESC'  %></th>
         <% else %>
           <th><%= link_to 'Index', :status => 'DESC'  %></th>
         <% end %>
