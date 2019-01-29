@@ -9,6 +9,13 @@
   <table class="center" border="1">
     <thead>
       <tr>
+        <% if @order == "DESC" %>
+          <th><%= link_to 'Index', :status => 'ASC'  %></th>
+        <% elsif @order == "ASC" %>
+          <th><%= link_to 'Index', :status => 'DESC'  %></th>
+        <% else %>
+          <th><%= link_to 'Index', :status => 'DESC'  %></th>
+        <% end %>
         <th>Title</th>
         <th>Description</th>
         <th colspan="3">Actions</th>
@@ -18,6 +25,7 @@
     <tbody>
       <% @days.each do |day| %>
         <tr>
+          <td><%= day.id %></td>
           <td><%= day.title %></td>
           <td><%= day.description %></td>
           <td><%= link_to 'Show', day, :class => 'btn btn-info'  %></td>
@@ -31,5 +39,7 @@
 <% end %>
 
 <br>
+
+<%= @test %>
 
 <p class="center"><%= link_to 'New Day', new_day_path, :class => 'btn btn-success'  %></p>
