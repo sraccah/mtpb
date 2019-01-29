@@ -6,6 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version 2.0.7
+* Rails version 5.2.2
 
 * Database used SQLite
 
