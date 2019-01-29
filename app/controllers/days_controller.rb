@@ -4,7 +4,14 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    @days = Day.all
+    request.GET.each do |key,value|
+      @order = value
+    end
+    if @order == "DESC"
+      @days = Day.all.order("created_at DESC")
+    else
+      @days = Day.all
+    end
   end
 
   # GET /days/1

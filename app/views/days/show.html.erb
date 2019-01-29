@@ -1,12 +1,10 @@
-<p>
-  <strong>Title:</strong>
-  <%= @day.title %>
-</p>
+<div class="center">
+  <p><strong>Title:</strong></p>
+  <p><%= @day.title %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @day.description %>
-</p>
+  <p><strong>Description:</strong></p>
+  <p><%= @day.description %></p>
 
-<%= link_to 'Edit', edit_day_path(@day), :class => 'btn btn-warning'  %> |
-<%= link_to 'Back', days_path, :class => 'btn btn-secondary'  %>
+  <%= link_to 'Edit', edit_day_path(@day), :class => 'btn btn-warning'  %> |
+  <%= link_to 'Back', days_path, :class => 'btn btn-secondary'  %>
+</div>
