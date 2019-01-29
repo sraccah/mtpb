@@ -26,11 +26,4 @@ ActiveRecord::Schema.define(version: 2019_01_29_150425) do
     t.datetime "updated_at", null: false
   end
 
-  #create_table "trips", force: :cascade do |t|
-    #t.text "title"
-    #t.text "summary"
-    #t.datetime "created_at", null: false
-    #t.datetime "updated_at", null: false
-  #end
-
 end
