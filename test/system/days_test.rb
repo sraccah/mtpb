@@ -14,7 +14,7 @@ class DaysTest < ApplicationSystemTestCase
     visit days_url
     click_on "New Day"
 
-    fill_in "Summary", with: @day.summary
+    fill_in "Description", with: @day.description
     fill_in "Title", with: @day.title
     click_on "Create Day"
 
@@ -26,7 +26,7 @@ class DaysTest < ApplicationSystemTestCase
     visit days_url
     click_on "Edit", match: :first
 
-    fill_in "Summary", with: @day.summary
+    fill_in "Description", with: @day.description
     fill_in "Title", with: @day.title
     click_on "Update Day"
 

@@ -17,7 +17,7 @@ class DaysControllerTest < ActionDispatch::IntegrationTest
 
   test "should create day" do
     assert_difference('Day.count') do
-      post days_url, params: { day: { summary: @day.summary, title: @day.title } }
+      post days_url, params: { day: { description: @day.description, title: @day.title } }
     end
 
     assert_redirected_to day_url(Day.last)
@@ -34,7 +34,7 @@ class DaysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update day" do
-    patch day_url(@day), params: { day: { summary: @day.summary, title: @day.title } }
+    patch day_url(@day), params: { day: { description: @day.description, title: @day.title } }
     assert_redirected_to day_url(@day)
   end
 

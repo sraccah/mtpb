@@ -2,8 +2,8 @@
 
 one:
   title: MyText
-  summary: MyText
+  description: MyText
 
 two:
   title: MyText
-  summary: MyText
+  description: MyText
