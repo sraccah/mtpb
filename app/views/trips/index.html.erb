@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Trips</h1>
+<h1>My trip plans</h1>
 
 <table>
   <thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= trip.title %></td>
         <td><%= trip.summary %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', trip, :class => 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_trip_path(trip), :class => 'btn btn-warning' %></td>
+        <td><%= link_to 'Delete', trip, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'New Trip', new_trip_path, :class => 'btn btn-success'  %>
