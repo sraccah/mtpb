@@ -25,9 +25,9 @@ class DaysController < ApplicationController
   # POST /days.json
   def create
     @day = Day.new(day_params)
-    flash['success'] = 'Day was successfully created.'
     respond_to do |format|
       if @day.save
+        flash['success'] = 'Day was successfully created.'
         format.html { redirect_to @day, flash: @flash }
         format.json { render :show, status: :created, location: @day }
       else
@@ -41,9 +41,9 @@ class DaysController < ApplicationController
   # PATCH/PUT /days/1.json
   def update
     # same color as the button for easier dev, success should be green
-    flash['alert'] = 'Day was successfully updated.'
     respond_to do |format|
       if @day.update(day_params)
+        flash['alert'] = 'Day was successfully updated.'
         format.html { redirect_to @day, flash: @flash }
         format.json { render :show, status: :ok, location: @day }
       else
@@ -56,9 +56,9 @@ class DaysController < ApplicationController
   # DELETE /days/1
   # DELETE /days/1.json
   def destroy
-    flash['error'] = 'Day was successfully deleted.'
     @day.destroy
     respond_to do |format|
+      flash['error'] = 'Day was successfully deleted.'
       format.html { redirect_to days_url, flash: @flash }
       format.json { head :no_content }
     end

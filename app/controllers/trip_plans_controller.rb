@@ -1,6 +1,8 @@
 class TripPlansController < ApplicationController
   before_action :set_trip_plan, only: [:show, :edit, :update, :destroy]
 
+  # All URL's use '-' instead of '_'
+
   # GET /trip_plans
   # GET /trip_plans.json
   def index
@@ -26,9 +28,9 @@ class TripPlansController < ApplicationController
   def create
     @trip_plan = TripPlan.new(trip_plan_params)
 
-    flash['success'] = 'Trip was successfully created.'
     respond_to do |format|
       if @trip_plan.save
+        flash['success'] = 'Trip was successfully created.'
         format.html { redirect_to @trip_plan, flash: @flash }
         format.json { render :show, status: :created, location: @trip_plan }
       else
@@ -41,9 +43,9 @@ class TripPlansController < ApplicationController
   # PATCH/PUT /trip_plans/1
   # PATCH/PUT /trip_plans/1.json
   def update
-    flash['alert'] = 'Trip was successfully updated.'
     respond_to do |format|
       if @trip_plan.update(trip_plan_params)
+        flash['alert'] = 'Trip was successfully updated.'
         format.html { redirect_to @trip_plan, flash: @flash }
         format.json { render :show, status: :ok, location: @trip_plan }
       else
@@ -57,8 +59,8 @@ class TripPlansController < ApplicationController
   # DELETE /trip_plans/1.json
   def destroy
     @trip_plan.destroy
-    flash['error'] = 'Trip was successfully deleted.'
     respond_to do |format|
+      flash['error'] = 'Trip was successfully deleted.'
       format.html { redirect_to trip_plans_url, flash: @flash }
       format.json { head :no_content }
     end
