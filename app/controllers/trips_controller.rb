@@ -25,10 +25,10 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
-
+    flash['success'] = 'Trip was successfully created.'
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+        format.html { redirect_to @trip, flash: @flash }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new }
@@ -40,9 +40,11 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
+    # same color as the button for easier dev, success should be green
+    flash['alert'] = 'Trip was successfully updated.'
     respond_to do |format|
       if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
+        format.html { redirect_to @trip, flash: @flash }
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit }
@@ -55,8 +57,9 @@ class TripsController < ApplicationController
   # DELETE /trips/1.json
   def destroy
     @trip.destroy
+    flash['error'] = 'Trip was successfully deleted.'
     respond_to do |format|
-      format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
+      format.html { redirect_to trips_url, flash: @flash }
       format.json { head :no_content }
     end
   end
