@@ -1,26 +1,34 @@
 <h1 class="main-title">Trip Plans</h1>
 
-<table class="center" border="1">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Summary</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+<% if @trip_plans.empty? %>
 
-  <tbody>
-    <% @trip_plans.each do |trip_plan| %>
+  <p class="center">No trip plans yet...<td>
+
+<% else %>
+
+  <table class="center" border="1">
+    <thead>
       <tr>
-        <td><%= trip_plan.title %></td>
-        <td><%= trip_plan.summary %></td>
-        <td><%= link_to 'Show', trip_plan, :class => 'btn btn-info'  %></td>
-        <td><%= link_to 'Edit', edit_trip_plan_path(trip_plan), :class => 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', trip_plan, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        <th>Title</th>
+        <th>Summary</th>
+        <th colspan="3">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @trip_plans.each do |trip_plan| %>
+        <tr>
+          <td><%= trip_plan.title %></td>
+          <td><%= trip_plan.summary %></td>
+          <td><%= link_to 'Show', trip_plan, :class => 'btn btn-info'  %></td>
+          <td><%= link_to 'Edit', edit_trip_plan_path(trip_plan), :class => 'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', trip_plan, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
 
 <br>
 

@@ -40,7 +40,7 @@ class DaysController < ApplicationController
   # PATCH/PUT /days/1
   # PATCH/PUT /days/1.json
   def update
-    # same color as the button for easier dev, success should be green
+    # same color as the button for easier dev but success should be green
     respond_to do |format|
       if @day.update(day_params)
         flash['alert'] = 'Day was successfully updated.'
