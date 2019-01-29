@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'pages#home'
   # adding resources for my models (cmd: rake routes => check all routes)
   resources :days
-  resources :trips
+  resources :trip_plans, :path => '/trip-plans'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

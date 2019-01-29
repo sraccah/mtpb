@@ -1,0 +1,27 @@
+<%= form_with(model: trip_plan, local: true) do |form| %>
+  <% if trip_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trip_plan.errors.count, "error") %> prohibited this trip_plan from being saved:</h2>
+
+      <ul>
+      <% trip_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <p><%= form.label :title, "Title of the trip" %></p>
+    </p><%= form.text_area :title, class: "form-control" %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= form.label :summary, "Summary of the trip" %></p>
+    <p><%= form.text_area :summary, class: "form-control" %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= form.submit 'Submit', :class => 'btn btn-success' %></p>
+  </div>
+<% end %>

@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_121251) do
+ActiveRecord::Schema.define(version: 2019_01_29_150425) do
 
   create_table "days", force: :cascade do |t|
+    t.text "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trip_plans", force: :cascade do |t|
     t.text "title"
     t.text "summary"
     t.datetime "created_at", null: false

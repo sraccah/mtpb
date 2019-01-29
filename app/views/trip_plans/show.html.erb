@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @trip_plan.title %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @trip_plan.summary %>
+</p>
+
+<%= link_to 'Edit', edit_trip_plan_path(@trip_plan), :class => 'btn btn-warning' %> |
+<%= link_to 'Back', trip_plans_path, :class => 'btn btn-secondary' %>

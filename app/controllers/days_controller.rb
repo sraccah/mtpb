@@ -25,7 +25,7 @@ class DaysController < ApplicationController
   # POST /days.json
   def create
     @day = Day.new(day_params)
-    flash['success'] = 'Trip was successfully created.'
+    flash['success'] = 'Day was successfully created.'
     respond_to do |format|
       if @day.save
         format.html { redirect_to @day, flash: @flash }
@@ -41,7 +41,7 @@ class DaysController < ApplicationController
   # PATCH/PUT /days/1.json
   def update
     # same color as the button for easier dev, success should be green
-    flash['warning'] = 'Trip was successfully updated.'
+    flash['alert'] = 'Day was successfully updated.'
     respond_to do |format|
       if @day.update(day_params)
         format.html { redirect_to @day, flash: @flash }
@@ -56,7 +56,7 @@ class DaysController < ApplicationController
   # DELETE /days/1
   # DELETE /days/1.json
   def destroy
-    flash['error'] = 'Trip was successfully deleted.'
+    flash['error'] = 'Day was successfully deleted.'
     @day.destroy
     respond_to do |format|
       format.html { redirect_to days_url, flash: @flash }
@@ -72,6 +72,6 @@ class DaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def day_params
-      params.require(:day).permit(:title, :summary)
+      params.require(:day).permit(:title, :description)
     end
 end
