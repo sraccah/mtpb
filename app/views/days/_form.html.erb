@@ -13,15 +13,15 @@
 
   <div class="form-group">
     <p><%= form.label :title, "Title of the day" %></p>
-    </p><%= form.text_area :title, class: "form-control" %></p>
+    </p><%= form.text_area :title, {class: "form-control"} %></p>
   </div>
 
   <div class="form-group">
     <p><%= form.label :description, "Description of the day" %></p>
-    <p><%= form.text_area :description, class: "form-control" %></p>
+    <p><%= form.text_area :description, {class: "form-control"} %></p>
   </div>
 
   <div class="form-group">
-    <p><%= form.submit 'Submit', :class => 'btn btn-success' %></p>
+    <p><%= form.submit 'Submit', {class: 'btn btn-success'} %></p>
   </div>
 <% end %>
