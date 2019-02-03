@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="form-group">
-    <p><%= form.label :title, "Title of the trip" %></p>
+    <p><%= form.label :title, "Title of the trip" %><span class="star"> *</span></p>
     </p><%= form.text_area :title, class: "form-control" %></p>
   </div>
 
   <div class="form-group">
-    <p><%= form.label :summary, "Summary of the trip" %></p>
+    <p><%= form.label :summary, "Summary of the trip" %><span class="star"> *</span></p>
     <p><%= form.text_area :summary, class: "form-control" %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= form.label :days_id, "Title of the day associated with this trip plan" %></p>
+    <%= form.collection_select :days_id, Day.all, :id, :title, {include_blank: 'None'} %> <%#, {multiple: true}%>
   </div>
 
   <div class="form-group">

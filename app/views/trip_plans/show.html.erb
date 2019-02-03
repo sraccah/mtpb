@@ -5,6 +5,13 @@
   <p><strong>Summary:</strong></p>
   <p><%= @trip_plan.summary %></p>
 
+  <p><strong>Days:</strong></p>
+  <% if @trip_plan.days_id %>
+      <p><%= @trip_plan.days_id %></p>
+  <% else %>
+    <p>No days associated yet...</p>
+  <% end %>
+
   <%= link_to 'Edit', edit_trip_plan_path(@trip_plan), :class => 'btn btn-warning' %> |
   <%= link_to 'Back', trip_plans_path, :class => 'btn btn-secondary' %>
 </div>
