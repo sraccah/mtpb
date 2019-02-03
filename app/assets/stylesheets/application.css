@@ -39,3 +39,7 @@ form {
 th a:visited {
     color: black;
 }
+
+.star {
+    color: red;
+}
